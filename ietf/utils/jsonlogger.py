@@ -1,9 +1,9 @@
 # Copyright The IETF Trust 2024, All Rights Reserved
-from pythonjsonlogger.json import JsonFormatter
+from pythonjsonlogger import jsonlogger
 import time
 
 
-class DatatrackerJsonFormatter(JsonFormatter):
+class DatatrackerJsonFormatter(jsonlogger.JsonFormatter):
     converter = time.gmtime  # use UTC
     default_msec_format = "%s.%03d"  # '.' instead of ','
 
